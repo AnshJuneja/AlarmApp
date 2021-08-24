@@ -1,6 +1,8 @@
 package com.learntodroid.simplealarmclock.activities;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,5 +15,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d("POWER1", "Test");
+    }
+
+    @Override
+    public boolean onKeyLongPress(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_POWER) {
+            Log.d("POWER2", "Test");
+            return true;
+        }
+        return super.onKeyLongPress(keyCode, event);
     }
 }
